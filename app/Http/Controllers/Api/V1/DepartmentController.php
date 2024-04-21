@@ -5,15 +5,15 @@ namespace App\Http\Controllers\Api\V1;
 use App\Models\Department;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use App\Repositories\DepartmentRepository;
 use Symfony\Component\HttpFoundation\Response;
+use App\Interfaces\DepartmentRepositoryInterface;
 use App\Http\Requests\V1\Departments\StoreRequest;
 use App\Http\Requests\V1\Departments\UpdateRequest;
 use App\Http\Requests\V1\Departments\DeleteRequest;
 
 final class DepartmentController extends Controller
 {
-    public function __construct(private readonly DepartmentRepository $repository)
+    public function __construct(private readonly DepartmentRepositoryInterface $repository)
     {
 
     }

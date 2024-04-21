@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Api\V1;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use App\Repositories\EmployeeRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Validation\ValidationException;
+use App\Interfaces\EmployeeRepositoryInterface;
 use App\Http\Requests\V1\Employees\StoreOrUpdateRequest;
 
 final class EmployeeController extends Controller
 {
-    public function __construct(private readonly EmployeeRepository $repository)
+    public function __construct(private readonly EmployeeRepositoryInterface $repository)
     {
 
     }
